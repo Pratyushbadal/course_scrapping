@@ -15,6 +15,7 @@ def find_course_detail(course_name):
         return course_format
     return "Course not found"
 
+
 if __name__ == "__main__":
     course_name = input("Enter course name: ")
     res = find_course_detail(course_name)

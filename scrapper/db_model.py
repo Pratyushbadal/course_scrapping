@@ -37,25 +37,15 @@ class DbModel(object):
                             """, data)
         self.conn.commit()
 
-    def get_all_course_names(self):
-        self.cursor.execute("SELECT course_name FROM courses")
+    def get_all_courses_name(self):
+        self.cursor.execute("Select course_name FROM courses")
         return self.cursor.fetchall()
 
-    def get_course_detail(self, course_name):
-        self.cursor.execute("SELECT * FROM courses where course_name = ?", (course_name,))
-        return self.cursor.fetchone()
-
     def close_db_connection(self):
-            self.conn.close()
-
-    def connect(self, param):
-        pass
-
-
+        self.conn.close()
 
 
 if __name__ == "__main__":
     db = DbModel("mobiles.db")
     # db.create_table()
     print(db.get_table_data())
-

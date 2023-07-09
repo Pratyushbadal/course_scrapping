@@ -36,10 +36,9 @@ class Scrapper(object):
 
         return result
 
-
     def insert_to_db(self):
-        db_model = DbModel("mobiles.db")
-        db_data = db_model.get_all_course_names()
+        db_model = DbModel("")  # create an instance/ object of DbModel
+        db_data = db_model.get_all_courses_name()
         if len(db_data) > 0:
             db_data = [d[0] for d in db_data if len(d) > 0]
         print("DB Data: ", db_data)
@@ -53,5 +52,5 @@ class Scrapper(object):
 
 if __name__ == "__main__":
     scrapper = Scrapper()
-    print(scrapper.parse_content())
-    # print(scrapper.insert_to_db())
+    # print(scrapper.parse_content())
+    print(scrapper.insert_to_db())
