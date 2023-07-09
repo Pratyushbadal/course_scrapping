@@ -1,0 +1,6 @@
+Create a project that scraps the data for mobile from a website and store the data into database.
+
+1. data: model, price, rating, image, description, reviews, specifications
+2. store the data into database
+3. create an interface to search the mobile with model name and display the details of the mobile
+4. create gitHub public/private repository and push the code into gitHub

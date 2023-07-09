@@ -2,7 +2,7 @@ from db_model import DbModel
 
 
 def find_course_detail(course_name):
-    db_model = DbModel()
+    db_model = DbModel("course.db")
     course_detail = db_model.get_course_detail(course_name)
     if course_detail:
         course_format = f"""
@@ -18,3 +18,4 @@ def find_course_detail(course_name):
 if __name__ == "__main__":
     course_name = input("Enter course name: ")
     res = find_course_detail(course_name)
+    print(res)

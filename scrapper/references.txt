@@ -1,0 +1,7 @@
+Websites to boost and practice your python skills:
+
+1. https://www.hackerrank.com/dashboard
+2. https://leetcode.com/problemset/all/
+3. https://www.tutorialspoint.com/python/index.htm
+4. https://www.learnpython.org
+5. https://peps.python.org/pep-0008/

@@ -3,7 +3,7 @@ import sqlite3
 
 class DbModel(object):
 
-    def __init__(self):
+    def __init__(self, s):
         self.conn = sqlite3.connect("scrapper.db")
         self.cursor = self.conn.cursor()
 
@@ -44,11 +44,18 @@ class DbModel(object):
     def get_course_detail(self, course_name):
         self.cursor.execute("SELECT * FROM courses where course_name = ?", (course_name,))
         return self.cursor.fetchone()
+
     def close_db_connection(self):
             self.conn.close()
 
+    def connect(self, param):
+        pass
+
+
+
 
 if __name__ == "__main__":
-    db = DbModel()
+    db = DbModel("mobiles.db")
     # db.create_table()
     print(db.get_table_data())
+

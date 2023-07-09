@@ -28,16 +28,17 @@ class Scrapper(object):
         for course in courses:
             result.append({
                 "course_name": str(course.find("strong").text).replace("\n", ""),
-                "course_link": course.find("a")["href"],
-                "course_image": course.find("img")["data-src"],
                 "course_duration": str(course.find("p").find("strong").text).replace("\n", "") if course.find("p")
-                else None
+                else None,
+                "course_link": course.find("a")["href"],
+                "course_image": course.find("img")["data-src"]
             })
 
         return result
 
+
     def insert_to_db(self):
-        db_model = DbModel()
+        db_model = DbModel("mobiles.db")
         db_data = db_model.get_all_course_names()
         if len(db_data) > 0:
             db_data = [d[0] for d in db_data if len(d) > 0]
