@@ -1,7 +1,7 @@
 from db_model import DbModel
 
 
-def find_course_detail(course_name):
+def find_course_detail(courses_name):
     db_model = DbModel("course.db")
     course_detail = db_model.get_course_detail(course_name)
     if course_detail:

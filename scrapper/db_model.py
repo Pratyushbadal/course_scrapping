@@ -41,6 +41,9 @@ class DbModel(object):
         self.cursor.execute("Select course_name FROM courses")
         return self.cursor.fetchall()
 
+    def get_course_detail(self, course_name):
+        self.cursor.execute("SELECT * FROM courses where course_name = ?", (course_name,))
+
     def close_db_connection(self):
         self.conn.close()
 
